@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIStoryboard {
+public extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: nil)
     }

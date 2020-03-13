@@ -6,13 +6,13 @@
 
 import UIKit
 
-struct AlertHelper {
+public struct AlertHelper {
     var title:String
     var message:String
     var titleForOkButton:String
 }
 
-extension UIAlertController {
+public extension UIAlertController {
     
     final class func alertController(forTitle title: String, message: String, titleForOkButton:String = "Ok" ,preferredStyle: UIAlertController.Style = .alert, actions: [UIAlertAction]? = nil) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)

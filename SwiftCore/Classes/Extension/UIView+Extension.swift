@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     func border(width:CGFloat, color: UIColor, radius: CGFloat?) {
         self.layer.borderColor = color.cgColor

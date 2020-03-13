@@ -38,7 +38,7 @@ extension NSMutableAttributedString {
         self.append(normal)
         return self
     }
-
+    
     func attributedStringWithImages(images:UIImage..., offset: CGPoint = CGPoint(x: 0, y: 0)) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(attributedString: self)
         for image in images {

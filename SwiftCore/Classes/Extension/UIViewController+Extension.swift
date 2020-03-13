@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     func add(_ child: UIViewController) {
-        addChild(child)
+        addChildViewController(child)
         view.addSubview(child.view)
-        child.didMove(toParent: self)
+        child.didMove(toParentViewController: self)
     }
     
     func remove() {
@@ -23,14 +23,8 @@ extension UIViewController {
             return
         }
         
-        willMove(toParent: nil)
+        willMove(toParentViewController: nil)
         view.removeFromSuperview()
-        removeFromParent()
+        removeFromParentViewController()
     }
 }
-
-//self.view.addConstraints([
-//NSLayoutConstraint(item: mewnuView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0),
-//NSLayoutConstraint(item: mewnuView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0),
-//NSLayoutConstraint(item: mewnuView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 100)
-//])

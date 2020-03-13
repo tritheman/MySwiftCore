@@ -9,7 +9,7 @@
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
     
     func increseTapArea(top: CGFloat = 5, left: CGFloat = 5, bottom: CGFloat = 5, right: CGFloat = 5) {
         self.contentEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)

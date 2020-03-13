@@ -10,12 +10,12 @@ import Foundation
 
 
 public protocol EnumCollection: Hashable {
-  static func cases() -> AnySequence<Self>
-  static var allValues: [Self] { get }
+    static func cases() -> AnySequence<Self>
+    static var allValues: [Self] { get }
 }
 
 public extension EnumCollection {
-  
+    
     static func cases() -> AnySequence<Self> {
         return AnySequence { () -> AnyIterator<Self> in
             var raw = 0
@@ -29,7 +29,7 @@ public extension EnumCollection {
             }
         }
     }
-  
+    
     static var allValues: [Self] {
         return Array(self.cases())
     }

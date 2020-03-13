@@ -19,7 +19,7 @@ extension Float: NumberCurrencyProtocol {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current
         formatter.numberStyle = .currency
-
+        
         let number = NSNumber(value: self)
         if let currencyString = formatter.string(from: number) {
             return currencyString

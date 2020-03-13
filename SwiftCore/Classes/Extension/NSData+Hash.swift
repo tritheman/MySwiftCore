@@ -10,9 +10,7 @@ import Foundation
 import CommonCrypto
 
 public class SHA256HashUtil {
-    public init() {
-        
-    }
+    public init() { }
     
     public func getSHA256(input: NSData) -> String {
         return hexStringFromData(input: digest(input: input))

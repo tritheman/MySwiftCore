@@ -10,45 +10,45 @@
 import UIKit
 
 @IBDesignable
-extension UIView {
-  
-  @IBInspectable open var borderWidth: CGFloat {
+public extension UIView {
     
-    get {
-      
-      return self.layer.borderWidth
+    @IBInspectable open var borderWidth: CGFloat {
+        
+        get {
+            
+            return self.layer.borderWidth
+        }
+        set {
+            
+            self.layer.borderWidth = newValue
+        }
     }
-    set {
-      
-      self.layer.borderWidth = newValue
-    }
-  }
-  
-  @IBInspectable open var borderColor: UIColor? {
     
-    get {
-      
-      guard let cgColor = self.layer.borderColor else {
-        return nil
-      }
-      
-      return UIColor(cgColor: cgColor)
+    @IBInspectable open var borderColor: UIColor? {
+        
+        get {
+            
+            guard let cgColor = self.layer.borderColor else {
+                return nil
+            }
+            
+            return UIColor(cgColor: cgColor)
+        }
+        set {
+            
+            self.layer.borderColor = newValue?.cgColor
+        }
     }
-    set {
-      
-      self.layer.borderColor = newValue?.cgColor
-    }
-  }
-  
-  @IBInspectable open var cornerRadius: CGFloat {
     
-    get {
-      
-      return self.layer.cornerRadius
+    @IBInspectable open var cornerRadius: CGFloat {
+        
+        get {
+            
+            return self.layer.cornerRadius
+        }
+        set {
+            
+            self.layer.cornerRadius = newValue
+        }
     }
-    set {
-      
-      self.layer.cornerRadius = newValue
-    }
-  }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension DateFormatter {
+public extension DateFormatter {
     class func dateFormaterStyleYYYYMMDD() -> DateFormatter {
         return DateFormatter.dateFormater("yyyy-MM-dd")
     }

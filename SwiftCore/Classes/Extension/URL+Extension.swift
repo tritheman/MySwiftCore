@@ -7,13 +7,13 @@
 import Foundation
 import UIKit
 
-extension URL {
+public extension URL {
     
     public var queryParameters: [String: String]? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true), let queryItems = components.queryItems else {
             return nil
         }
-
+        
         var parameters = [String: String]()
         for item in queryItems {
             parameters[item.name] = item.value
@@ -27,7 +27,7 @@ extension URL {
         urlComponents.setQueryItems(with: parameters)
         return urlComponents.url!
     }
-
+    
     
     public static func ==(lhs: URL, rhs: URL) -> Bool {
         return lhs.absoluteString == rhs.absoluteString
