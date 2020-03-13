@@ -15,6 +15,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		685152789866723D6AD20088 /* Pods_SwiftCore_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947035E687468C6920C157 /* Pods_SwiftCore_Example.framework */; };
+		E0AC7A63241B8DBD00A618D3 /* UIScrollView+ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC7A60241B8DBC00A618D3 /* UIScrollView+ParallaxHeader.swift */; };
+		E0AC7A64241B8DBD00A618D3 /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC7A61241B8DBD00A618D3 /* ParallaxHeader.swift */; };
+		E0AC7A65241B8DBD00A618D3 /* ParallaxHeaderMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC7A62241B8DBD00A618D3 /* ParallaxHeaderMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		E0AC79FA241B70C800A618D3 /* ParalaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParalaxEffect.swift; sourceTree = "<group>"; };
 		E0AC79FB241B70C800A618D3 /* Flashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashable.swift; sourceTree = "<group>"; };
 		E0AC79FC241B70C800A618D3 /* Cyclable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyclable.swift; sourceTree = "<group>"; };
+		E0AC7A60241B8DBC00A618D3 /* UIScrollView+ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ParallaxHeader.swift"; sourceTree = "<group>"; };
+		E0AC7A61241B8DBD00A618D3 /* ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
+		E0AC7A62241B8DBD00A618D3 /* ParallaxHeaderMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +320,7 @@
 		E0AC79F6241B70C800A618D3 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				E0AC7A66241B920000A618D3 /* ParalaxHeaderEffect */,
 				E0AC79F7241B70C800A618D3 /* Dimmable.swift */,
 				E0AC79F8241B70C800A618D3 /* Movable.swift */,
 				E0AC79F9241B70C800A618D3 /* MovableAndDimmable.swift */,
@@ -322,6 +329,16 @@
 				E0AC79FC241B70C800A618D3 /* Cyclable.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		E0AC7A66241B920000A618D3 /* ParalaxHeaderEffect */ = {
+			isa = PBXGroup;
+			children = (
+				E0AC7A61241B8DBD00A618D3 /* ParallaxHeader.swift */,
+				E0AC7A62241B8DBD00A618D3 /* ParallaxHeaderMode.swift */,
+				E0AC7A60241B8DBC00A618D3 /* UIScrollView+ParallaxHeader.swift */,
+			);
+			path = ParalaxHeaderEffect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,6 +538,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0AC7A63241B8DBD00A618D3 /* UIScrollView+ParallaxHeader.swift in Sources */,
+				E0AC7A65241B8DBD00A618D3 /* ParallaxHeaderMode.swift in Sources */,
+				E0AC7A64241B8DBD00A618D3 /* ParallaxHeader.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
