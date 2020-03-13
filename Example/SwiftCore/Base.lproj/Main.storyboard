@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +18,38 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FA9-TH-Cdq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FA9-TH-Cdq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Hxx-fW-UYn"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="FA9-TH-Cdq" secondAttribute="bottom" id="ISb-MC-Xa3"/>
+                            <constraint firstItem="FA9-TH-Cdq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="h7h-8c-7cE"/>
+                            <constraint firstAttribute="trailing" secondItem="FA9-TH-Cdq" secondAttribute="trailing" id="seE-PG-PvL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VA-vA-31u">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="aw0-gD-8oH"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xS4-e6-LYE">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <string key="text">test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.test nay rat la dai dung co doc.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
+            <point key="canvasLocation" x="138" y="134"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftCore
 
 class ViewController: UIViewController {
 
@@ -22,3 +23,6 @@ class ViewController: UIViewController {
 
 }
 
+public class testView: UIView, Parallaxable {
+    
+}

@@ -14,7 +14,7 @@ import UIKit
  */
 public protocol Dimmable { }
 
-extension Dimmable where Self : UIView {
+public extension Dimmable where Self : UIView {
     
     /**
      This method animates the opacity of a view. The timing function used is EaseOut.

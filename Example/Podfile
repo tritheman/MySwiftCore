@@ -1,11 +1,13 @@
 use_frameworks!
 
 target 'SwiftCore_Example' do
-  pod 'SwiftCore', :path => '../'
-
+    pod 'SwiftCore', :path => '../'
+  
+#  pod 'SwiftCore', :git => 'git@github.com:tritheman/MySwiftCore.git', :commit => '81fbb8d'
+#  pod 'TKCheckout'
   target 'SwiftCore_Tests' do
     inherit! :search_paths
-
+    
     pod 'Quick', '~> 1.2.0'
     pod 'Nimble', '~> 7.0'
     pod 'FBSnapshotTestCase' , '~> 2.1.4'

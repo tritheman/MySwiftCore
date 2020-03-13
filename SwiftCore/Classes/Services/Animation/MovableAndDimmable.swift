@@ -14,7 +14,7 @@ import UIKit
  */
 public protocol MovableAndDimmable : Movable, Dimmable { }
 
-extension MovableAndDimmable where Self : UIView {
+public extension MovableAndDimmable where Self : UIView {
     
     /**
      This method is tailored for the "Building Carousels" animation of the design specs.

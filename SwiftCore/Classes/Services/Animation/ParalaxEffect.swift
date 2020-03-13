@@ -14,7 +14,7 @@ import UIKit
  */
 public protocol Parallaxable : Movable { }
 
-extension Parallaxable where Self : UIImageView {
+public extension Parallaxable where Self : UIImageView {
     
     /**
      This method animates a movement of an image view, creating a parallax effect. The timing function used is EaseOut. The effect is relative to the screen of the device. The parallax effect ranges to 8% of the image for all sides, according to the UI Specs.

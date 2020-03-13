@@ -14,7 +14,7 @@ import UIKit
  */
 public protocol Flashable  { }
 
-extension Flashable where Self : UIView {
+public extension Flashable where Self : UIView {
     
     /**
      This method is tailored for the "global banner" animation of the design specs.

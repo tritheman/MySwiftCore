@@ -19,7 +19,7 @@ extension Movable where Self : UIImageView {
     }
 }
 
-extension Movable where Self : UIView {
+public extension Movable where Self : UIView {
     public func motionMove(_ startOffset : CGPoint, endOffset : CGPoint, duration : Double, delay : Double, completionHandler : (() -> ())? = nil) {
         
         let startTransform = CATransform3DTranslate(layer.transform, startOffset.x, startOffset.y, 0.0)
