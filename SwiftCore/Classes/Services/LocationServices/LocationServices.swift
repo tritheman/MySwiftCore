@@ -23,13 +23,11 @@ fileprivate enum LSUserDefaultsKeys: String {
 
 public class LocationServices : NSObject {
     
-    
     static public let sharedInstance = LocationServices()
     fileprivate let locationManager = CLLocationManager()
     public var canSendLocation:Bool = false
     fileprivate var currentLocation:CLLocationCoordinate2D?
     fileprivate var zipcode: String?
-//    public fileprivate (set) var locationStatusChange: MultiBindingsValue<Bool> = MultiBindingsValue<Bool>(value: false)
     
     public var usePretendLocation:Bool {
         return UserDefaults.standard.bool(forKey: LSUserDefaultsKeys.settingsBundlePretendLocation.rawValue)
@@ -264,8 +262,6 @@ public class LocationServices : NSObject {
         }
     }
 }
-
-
 
 extension LocationServices: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

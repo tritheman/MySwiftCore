@@ -9,6 +9,19 @@
 import UIKit
 import SwiftCore
 
+
+class testAA: Codable, CacheCodable {
+    var testString: String = "testString"
+    var testFloat: Float = 33
+    var testInt: Int = 25
+}
+
+struct testBB: Codable, CacheCodable {
+    var testString: String = "testString testBB"
+    var testFloat: Float = 33
+    var testInt: Int = 25
+}
+
 class ViewController: UIViewController {
 
     var lastoffset: CGPoint = CGPoint.zero
@@ -16,11 +29,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var imageTestConstraintGHeight: NSLayoutConstraint!
     var imageTest: UIImageView!
+    let userCache = UserDefaultCache()
 //    @IBOutlet weak var paralaxView: testView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupParallaxHeader()
+//        userCache.setObject(testAA(), forKey: "testAAtestAA")
+//        userCache.setObject(testBB(), forKey: "testBBtestBB")
+//        userCache.setObject(true, forKey: "testBoolean")
+//        userCache.setObject(25, forKey: "testInt")
+//        userCache.saveToDisk()
+        
+        let test1 = userCache.getObject("testAAtestAA")
+        let test2 = userCache.getObject("testBBtestBB")
+        let test3 = userCache.getObject("testBoolean")
+        let test4 = userCache.getObject("testInt")
+//        imageTest.image = UIImage(data: decodeObject.dateTemp!)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -41,12 +66,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonThisPressed(_ sender: Any) {
-//        imageTest.motionParallax()
-//        imageTest.motionMove(CGPoint(x: 0, y: 0), endOffset: CGPoint(x: 0, y: 40), duration: 0, delay: 0)
-//        imageTest.motionMove(CGPoint(x: 0, y: 0), endOffset: CGPoint(x: 0, y: 40), duration: 0.1, delay: 0) {
-//            self.imageTest.frame.origin = CGPoint(x: 0, y: 0)
-//        }
-//        imageTest.motionParallax(scale: 0/.5)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,38 +78,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < 0.0 {
-//            // Scrolling down: Scale
-//            imageTestConstraintGHeight.constant =
-//               100 - scrollView.contentOffset.y
-//        } else {
-//            // Scrolling up: Parallax
-//            let parallaxFactor: CGFloat = 0.25
-//            let offsetY = scrollView.contentOffset.y * parallaxFactor
-//            let minOffsetY: CGFloat = 8.0
-//            let availableOffset = min(offsetY, minOffsetY)
-//            let contentRectOffsetY = availableOffset / 100
-//            imageTestConstraintGHeight.constant = view.frame.origin.y
-//            imageTestConstraintGHeight.constant =
-//                100 - scrollView.contentOffset.y
-//            imageTest.layer.contentsRect =
-//                CGRect(x: 0, y: -contentRectOffsetY, width: 1, height: 1)
-//        }
+
     }
 }
 
 public class testView: UIView, Parallaxable {
     public func motionParallax(scale : CGFloat = 0.05) {
-//
-//        let screenFrame = UIScreen.main.bounds
-//        let frame = self.convert(self.bounds, to:nil)
-//        let center = self.convert(self.center, to: nil)
-//
-//        let xOffset = (screenFrame.origin.x - center.x / screenFrame.size.width) * (scale * frame.size.width)
-//        let yOffset = (screenFrame.origin.y - center.y / screenFrame.size.height) * (scale * frame.size.height)
-//
-//        let point = CGPoint(x: xOffset, y: yOffset)
-        
         self.motionMove(CGPoint(x: 0, y: 0), endOffset: CGPoint(x: 0, y: 40), duration: 0.2, delay: 0)
     }
 }

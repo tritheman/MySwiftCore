@@ -683,6 +683,25 @@ extension Date {
 }
 extension Date {
     
+    public func toData(_ date : Date) -> Data
+    {
+       let cal = Calendar(identifier: .gregorian)
+       let comp = cal.dateComponents([.day,.month,.year,.hour,.minute,.second], from: date)
+       let year = comp.year!
+       let yearLo = UInt8(year & 0xFF) // mask to avoid overflow error on conversion to UInt8
+       let yearHi = UInt8(year >> 8)
+       let settingArray = [UInt8]([
+          yearLo
+          , yearHi
+          , UInt8(comp.month!)
+          , UInt8(comp.day!)
+          , UInt8(comp.hour!)
+          , UInt8(comp.minute!)
+          , UInt8(comp.second!)
+          ])
+       return Data(bytes: settingArray)
+    }
+    
     public static let  dateFormatterTimeAndTimeSymbol: DateFormatter = {
         var dateFormatter = DateFormatter()
         dateFormatter.amSymbol = "a"
