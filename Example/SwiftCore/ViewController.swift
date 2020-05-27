@@ -7,46 +7,73 @@
 //
 
 import UIKit
-import SwiftCore
+//import SwiftCore
 
 class ViewController: UIViewController {
 
     var lastoffset: CGPoint = CGPoint.zero
-    
-    @IBOutlet weak var contentScrollView: UIScrollView!
-    @IBOutlet weak var imageTestConstraintGHeight: NSLayoutConstraint!
     var imageTest: UIImageView!
-//    @IBOutlet weak var paralaxView: testView!
+    
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var downloadButton: UIButton!
+    let dataLoader = DataLoader()
+    var downloadItems: [String] = ["https://www.dropbox.com/s/6xlpner3s6q336f/file1.mp4?dl=1",
+                                   "https://www.dropbox.com/s/73ymbx6icoiqus9/file2.mp4?dl=1",
+                                   "https://www.dropbox.com/s/4pw4jwiju0eon6r/file3.mp4?dl=1",
+                                   "https://www.dropbox.com/s/2bmbk8id7nseirq/file4.mp4?dl=1",
+                                   "https://www.dropbox.com/s/cw7wfyaic9rtzwd/GCDExample-master.zip?dl=1",
+                                   "https://www.dropbox.com/s/y9kgs6caztxxjdh/AlecrimCoreData-master.zip?dl=1"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupParallaxHeader()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func downloadPressed(_ sender: Any) {
+        guard let titleString = downloadButton.title(for: .normal), let url = URL(string: titleString) else { return }
+        let urlRequest = URLRequest(url: url)
+        let curTask = dataLoader.loadData(request: urlRequest, didReceiveData: { [weak self] (curData, urlReponse) in
+            guard let strongSelf = self else { return }
+//            print("tridh 2 curDownloadData \(curData.count)")
+        }) { [weak self] (error) in
+            guard let strongSelf = self else { return }
+//            print("tridh 2 downloadPressed \(error)")
+        }
+        
+    }
+    
+    func testCache() {
+        let testDataCached = try! DataCache(name: "Tridh2")
+        for i in 0...1000 {
+            if let youtubeImage = UIImage(named: "Youtube"), let imageData = youtubeImage.pngRepresentationData {
+                testDataCached.storeData(imageData, for: "Youtube\(i)")
+            }
+            let item = testDataCached.getCache(key: "Youtube\(i)")
+            print(item)
+        }
+        testDataCached.removeAll()
     }
 
 
     private func setupParallaxHeader() {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "TextSS")
-        imageView.contentMode = .scaleAspectFill
+//        let imageView = UIImageView()
+//        imageView.image = UIImage(named: "TextSS")
+//        imageView.contentMode = .scaleAspectFill
         
-        imageTest = imageView
-        contentScrollView.parallaxHeader.view = imageTest
-        contentScrollView.parallaxHeader.height = 200
-        contentScrollView.parallaxHeader.minimumHeight = 20
-        contentScrollView.parallaxHeader.mode = .topFill
-        contentScrollView.parallaxHeader.parallaxHeaderDidScrollHandler = { parallaxHeader in
-            print(parallaxHeader.progress)
-        }
+//        imageTest = imageView
+//        contentScrollView.parallaxHeader.view = imageTest
+//        contentScrollView.parallaxHeader.height = 200
+//        contentScrollView.parallaxHeader.minimumHeight = 20
+//        contentScrollView.parallaxHeader.mode = .topFill
+//        contentScrollView.parallaxHeader.parallaxHeaderDidScrollHandler = { parallaxHeader in
+//            print(parallaxHeader.progress)
+//        }
     }
     
     @IBAction func buttonThisPressed(_ sender: Any) {
-//        imageTest.motionParallax()
-//        imageTest.motionMove(CGPoint(x: 0, y: 0), endOffset: CGPoint(x: 0, y: 40), duration: 0, delay: 0)
-//        imageTest.motionMove(CGPoint(x: 0, y: 0), endOffset: CGPoint(x: 0, y: 40), duration: 0.1, delay: 0) {
-//            self.imageTest.frame.origin = CGPoint(x: 0, y: 0)
-//        }
-//        imageTest.motionParallax(scale: 0/.5)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,40 +85,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < 0.0 {
-//            // Scrolling down: Scale
-//            imageTestConstraintGHeight.constant =
-//               100 - scrollView.contentOffset.y
-//        } else {
-//            // Scrolling up: Parallax
-//            let parallaxFactor: CGFloat = 0.25
-//            let offsetY = scrollView.contentOffset.y * parallaxFactor
-//            let minOffsetY: CGFloat = 8.0
-//            let availableOffset = min(offsetY, minOffsetY)
-//            let contentRectOffsetY = availableOffset / 100
-//            imageTestConstraintGHeight.constant = view.frame.origin.y
-//            imageTestConstraintGHeight.constant =
-//                100 - scrollView.contentOffset.y
-//            imageTest.layer.contentsRect =
-//                CGRect(x: 0, y: -contentRectOffsetY, width: 1, height: 1)
-//        }
     }
 }
 
-public class testView: UIView, Parallaxable {
-    public func motionParallax(scale : CGFloat = 0.05) {
-//
-//        let screenFrame = UIScreen.main.bounds
-//        let frame = self.convert(self.bounds, to:nil)
-//        let center = self.convert(self.center, to: nil)
-//
-//        let xOffset = (screenFrame.origin.x - center.x / screenFrame.size.width) * (scale * frame.size.width)
-//        let yOffset = (screenFrame.origin.y - center.y / screenFrame.size.height) * (scale * frame.size.height)
-//
-//        let point = CGPoint(x: xOffset, y: yOffset)
-        
-        self.motionMove(CGPoint(x: 0, y: 0), endOffset: CGPoint(x: 0, y: 40), duration: 0.2, delay: 0)
-    }
+
+extension ViewController {
+    
 }
 
 //public class testImageView: UIImageView, Parallaxable { }

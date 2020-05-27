@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import SwiftCore
+//import SwiftCore
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
@@ -40,7 +40,6 @@ class TableOfContentsSpec: QuickSpec {
                     waitUntil { done in
                         Thread.sleep(forTimeInterval: 0.5)
                         expect(time) == "done"
-
                         done()
                     }
                 }

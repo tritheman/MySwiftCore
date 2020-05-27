@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'SwiftCore_Example' do
-    pod 'SwiftCore', :path => '../'
+#    pod 'SwiftCore', :path => '../'
   
 #  pod 'SwiftCore', :git => 'git@github.com:tritheman/MySwiftCore.git', :commit => '81fbb8d'
 #  pod 'TKCheckout'
