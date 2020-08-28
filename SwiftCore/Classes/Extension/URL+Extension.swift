@@ -9,7 +9,7 @@ import UIKit
 
 public extension URL {
     
-    public var queryParameters: [String: String]? {
+    var queryParameters: [String: String]? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true), let queryItems = components.queryItems else {
             return nil
         }
@@ -29,7 +29,7 @@ public extension URL {
     }
     
     
-    public static func ==(lhs: URL, rhs: URL) -> Bool {
+    static func ==(lhs: URL, rhs: URL) -> Bool {
         return lhs.absoluteString == rhs.absoluteString
     }
 }

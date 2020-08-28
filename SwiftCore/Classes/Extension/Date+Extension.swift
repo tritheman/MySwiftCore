@@ -270,7 +270,7 @@ public extension Date {
         return dateformatter.string(from: self)
     }
     
-    public var shortLocalDateString: String {
+    var shortLocalDateString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         dateFormatter.timeZone = TimeZone.current
@@ -283,7 +283,7 @@ public extension Date {
     }
     
     // MARK: Type Methods
-    public static func timespanString(startTime: Date, endTime: Date)-> String{
+    static func timespanString(startTime: Date, endTime: Date)-> String{
         var result = ""
         if (Date.passesMeridiem(startTime: startTime, endTime: endTime)){
             result = "\(startTime.timeString(withIndicator: true)) - \(endTime.timeString(withIndicator: true))"
@@ -293,7 +293,7 @@ public extension Date {
         return result
     }
     
-    public static func dateWith(year: Int, month: Int, day: Int) -> Date?{
+    static func dateWith(year: Int, month: Int, day: Int) -> Date?{
         var dateComponents = DateComponents()
         dateComponents.year = year
         dateComponents.month = month
@@ -301,21 +301,21 @@ public extension Date {
         return Calendar.current.date(from: dateComponents)
     }
     
-    public static func dateFromYMDString(_ ymdString: NSString) -> Date?{
+    static func dateFromYMDString(_ ymdString: NSString) -> Date?{
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter.date(from: ymdString as String)
     }
     
-    public static func dateFromCompressedUTCString(_ utcString: NSString) -> Date?{
+    static func dateFromCompressedUTCString(_ utcString: NSString) -> Date?{
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
         return dateFormatter.date(from: utcString as String)
     }
     
-    public static func daysIn(year: Int) -> Int{
+    static func daysIn(year: Int) -> Int{
         var result : Int = 0
         var year1Components, year2Components, computedComponents: DateComponents
         let calendar = Calendar.current
@@ -341,7 +341,7 @@ public extension Date {
         return result
     }
     
-    public static func daysInMonth(_ month: Int, ofYear: Int) -> Int{
+    static func daysInMonth(_ month: Int, ofYear: Int) -> Int{
         var result = 0
         
         let calendar = Calendar.current
@@ -360,7 +360,7 @@ public extension Date {
     
     
     // MARK: Instance Methods
-    public func timeString(withIndicator:Bool) -> String{
+    func timeString(withIndicator:Bool) -> String{
         let dateformatter = DateFormatter()
         if withIndicator{
             dateformatter.dateFormat = "h:mma"
@@ -372,7 +372,7 @@ public extension Date {
         return dateformatter.string(from: self)
     }
     
-    public func yearsSince(_ comparisonDate: Date) -> Int{
+    func yearsSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.year], from: comparisonDate, to: self).year else {
             return 0
@@ -380,7 +380,7 @@ public extension Date {
         return result
     }
     
-    public func monthsSince(_ comparisonDate: Date) -> Int{
+    func monthsSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.month], from: comparisonDate, to: self).year else {
             return 0
@@ -388,7 +388,7 @@ public extension Date {
         return result
     }
     
-    public func daysSince(_ comparisonDate: Date) -> Int{
+    func daysSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.day], from: comparisonDate, to: self).day else {
             return 0
@@ -396,7 +396,7 @@ public extension Date {
         return result
     }
     
-    public func hoursSince(_ comparisonDate: Date) -> Int{
+    func hoursSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.hour], from: comparisonDate, to: self).hour else {
             return 0
@@ -404,7 +404,7 @@ public extension Date {
         return result
     }
     
-    public func minutesSince(_ comparisonDate: Date) -> Int{
+    func minutesSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.minute], from: comparisonDate, to: self).minute else {
             return 0
@@ -412,7 +412,7 @@ public extension Date {
         return result
     }
     
-    public func secondsSince(_ comparisonDate: Date) -> Int{
+    func secondsSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.second], from: comparisonDate, to: self).second else {
             return 0
@@ -420,7 +420,7 @@ public extension Date {
         return result
     }
     
-    public func weeksSince(_ comparisonDate: Date) -> Int{
+    func weeksSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.weekOfYear], from: comparisonDate, to: self).weekOfYear else {
             return 0
@@ -428,7 +428,7 @@ public extension Date {
         return result
     }
     
-    public func quartersSince(_ comparisonDate: Date) -> Int{
+    func quartersSince(_ comparisonDate: Date) -> Int{
         let gregorian = Calendar(identifier: .gregorian)
         guard let result = gregorian.dateComponents([.quarter], from: comparisonDate, to: self).quarter else {
             return 0
@@ -436,7 +436,7 @@ public extension Date {
         return result
     }
     
-    public func add(hours: Int, minutes: Int, seconds: Int) -> Date?{
+    func add(hours: Int, minutes: Int, seconds: Int) -> Date?{
         var dateComponents = DateComponents()
         dateComponents.hour = hours
         dateComponents.minute = minutes
@@ -444,7 +444,7 @@ public extension Date {
         return (Calendar.current as NSCalendar).date(byAdding: dateComponents, to: self, options: .wrapComponents)
     }
     
-    public func add(years:Int, months: Int, days:Int) -> Date?{
+    func add(years:Int, months: Int, days:Int) -> Date?{
         var dateComponents = DateComponents()
         dateComponents.year = years
         dateComponents.month = months
@@ -452,70 +452,70 @@ public extension Date {
         return (Calendar.current as NSCalendar).date(byAdding: dateComponents, to: self, options: .wrapComponents)
     }
     
-    public func isBetween(startDate:Date, endDate:Date) -> Bool{
+    func isBetween(startDate:Date, endDate:Date) -> Bool{
         return ((self.daysSince(startDate)>=0)&&(daysSince(endDate)<=0))
     }
     
     // TODO: Several of these are duplicates of functions above.  They can be removed and uses of them replaced with the corresponding functions above.
-    public func dateByAddingDays(days: Int) -> Date {
+    func dateByAddingDays(days: Int) -> Date {
         return self.addingDays(days)
     }
     
-    public func dateBySubstractingDays(days: Int) -> Date {
+    func dateBySubstractingDays(days: Int) -> Date {
         return self.addingDays(-days)
     }
     
-    public func addingDays(_ days: Int) -> Date {
+    func addingDays(_ days: Int) -> Date {
         return Calendar.current.date(byAdding: .day, value: days, to: self)!
     }
     
-    public func dateByAddingHours(hours: Int) -> Date {
+    func dateByAddingHours(hours: Int) -> Date {
         return self.addingHours(hours)
     }
     
-    public func dateBySubstractingHours(hours: Int) -> Date {
+    func dateBySubstractingHours(hours: Int) -> Date {
         return self.addingHours(-hours)
     }
     
-    public func addingHours(_ hours: Int) -> Date {
+    func addingHours(_ hours: Int) -> Date {
         return Calendar.current.date(byAdding: .hour, value: hours, to: self)!
     }
     
-    public func addingMinutes(_ minutes: Int) -> Date {
+    func addingMinutes(_ minutes: Int) -> Date {
         return Calendar.current.date(byAdding: .minute, value: minutes, to: self)!
     }
     
-    public func addingSeconds(_ seconds: Int) -> Date {
+    func addingSeconds(_ seconds: Int) -> Date {
         return Calendar.current.date(byAdding: .second, value: seconds, to: self)!
     }
     
     /// Returns the amount of days from another date
-    public func days(from date: Date) -> Int {
+    func days(from date: Date) -> Int {
         return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
     }
     /// Returns the amount of hours from another date
-    public func hours(from date: Date) -> Int {
+    func hours(from date: Date) -> Int {
         return Calendar.current.dateComponents([.hour], from: date, to: self).hour ?? 0
     }
     
     /// Returns the amount of minutes from another date
-    public func minutes(from date: Date) -> Int {
+    func minutes(from date: Date) -> Int {
         return Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0
     }
     
     /// Returns the amount of seconds from another date
-    public func seconds(from date: Date) -> Int {
+    func seconds(from date: Date) -> Int {
         return Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0
     }
     
-    public func dateAtStartOfDay() -> Date {
+    func dateAtStartOfDay() -> Date {
         let calendar = NSCalendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: self)
         return calendar.date(from: components)!
     }
     
     //WARNING: This function is expensive. Using repeatedly can lead to performance issues
-    public func dateAtStartOfHour() -> Date {
+    func dateAtStartOfHour() -> Date {
         
         let timeZone = TimeZone.autoupdatingCurrent
         var dateComponents = Calendar.current.dateComponents(in: timeZone, from: self)
@@ -525,7 +525,7 @@ public extension Date {
     }
     
     //WARNING: This function is expensive. Using repeatedly can lead to performance issues
-    public func dateAtStartOfHalfHour() -> Date {
+    func dateAtStartOfHalfHour() -> Date {
         
         let timeZone = TimeZone.autoupdatingCurrent
         var dateComponents = Calendar.current.dateComponents(in: timeZone, from: self)
@@ -540,15 +540,15 @@ public extension Date {
         return Calendar.current.date(from: dateComponents)!
     }
     
-    public func isGreaterThanDate(dateToCompare : Date) -> Bool {
+    func isGreaterThanDate(dateToCompare : Date) -> Bool {
         return self.compare(dateToCompare) == ComparisonResult.orderedDescending
     }
     
-    public func isLessThanDate(dateToCompare : Date) -> Bool {
+    func isLessThanDate(dateToCompare : Date) -> Bool {
         return self.compare(dateToCompare) == ComparisonResult.orderedAscending
     }
     
-    public func isEqualToDate(dateToCompare : Date) -> Bool {
+    func isEqualToDate(dateToCompare : Date) -> Bool {
         return self.compare(dateToCompare) == ComparisonResult.orderedSame
     }
     
@@ -564,7 +564,7 @@ public extension Date {
         return epochTimeInMilliseconds / 3600000.0
     }
     
-    public func added(days:Int = 0, hours:Int = 0, minutes:Int = 0, seconds:Int = 0) -> Date {
+    func added(days:Int = 0, hours:Int = 0, minutes:Int = 0, seconds:Int = 0) -> Date {
         var date = self
         if days != 0 {
             date = Calendar.current.date(byAdding: .day, value: days, to: date) ?? date
@@ -581,32 +581,32 @@ public extension Date {
         return date
     }
     
-    public func truncatedToMidnight() -> Date {
+    func truncatedToMidnight() -> Date {
         return self.dateAtStartOfDay()
     }
     
-    public func truncatedToHour() -> Date {
+    func truncatedToHour() -> Date {
         return self.dateAtStartOfHour()
     }
     
-    public func truncatedToHalfHour() -> Date {
+    func truncatedToHalfHour() -> Date {
         return self.dateAtStartOfHalfHour()
     }
     
     
-    public func difference(inDaysFrom date:Date) -> Int {
+    func difference(inDaysFrom date:Date) -> Int {
         return Calendar.current.component(.day, from: self) - Calendar.current.component(.day, from: date)
     }
     
-    public func difference(inHoursFrom date:Date) -> Int {
+    func difference(inHoursFrom date:Date) -> Int {
         return Calendar.current.component(.hour, from: self) - Calendar.current.component(.hour, from: date)
     }
     
-    public func difference(inMinutesFrom date:Date) -> Int {
+    func difference(inMinutesFrom date:Date) -> Int {
         return Calendar.current.component(.minute, from: self) - Calendar.current.component(.minute, from: date)
     }
     
-    public func isBetween (date1:Date , date2:Date) -> Bool {
+    func isBetween (date1:Date , date2:Date) -> Bool {
         
         return date1.compare(self).rawValue * self.compare(date2).rawValue >= 0
     }
@@ -625,7 +625,7 @@ public extension Date {
 
 extension Date {
     
-    public func difference(inDaysTo date:Date) -> Int {
+    func difference(inDaysTo date:Date) -> Int {
         let calendar = Calendar.current
         return calendar.dateComponents([.day], from: calendar.startOfDay(for: self), to: calendar.startOfDay(for: date)).day ?? 0
     }
@@ -712,7 +712,7 @@ extension Date {
     /// - Parameters:
     //
     /// - Returns: Date as String (ex: Next Thursday, 7:00p OR Thursday, 7:00p OR Today , 7:00p OR Tomorrow, 7:00p)
-    public func weekDayTimeString() -> String {
+    func weekDayTimeString() -> String {
         let kNoOfDaysTillDateToShowLiveMetadata = 14
         if !self.isBetween(date1: Date.now, date2: Date().addingDays(kNoOfDaysTillDateToShowLiveMetadata)){
             return ""
@@ -734,7 +734,7 @@ extension Date {
     /// Method to show formatted time with hours, minutes and a/p
     ///
     /// - Returns: Date time as String (ex: '10:00a', '1:00p')
-    public func timeString() -> String {
+    func timeString() -> String {
         return Date.dateFormatterTimeAndTimeSymbol.string(from: self)
     }
     
@@ -744,7 +744,7 @@ extension Date {
     ///     - startTime: startTime of the resource
     ///     - endTime: endTime of the resource
     /// - Returns: Date as String (ex: 7:00-8:00pm)
-    public func getFormattedDate(_ startTime: Date, _ endTime: Date) -> String {
+    func getFormattedDate(_ startTime: Date, _ endTime: Date) -> String {
         var timeLeft = ""
         let remainingTime = endTime.timeIntervalSinceNow
         let hours = Int(remainingTime / 3600)

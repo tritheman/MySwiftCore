@@ -11,15 +11,36 @@ import Foundation
 public extension DataLoader {
     
     static let cachePath: String = {
+//        let cachePaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//        if let cachePath = cachePaths.first, let identifier = Bundle.main.bundleIdentifier {
+//            return cachePath.appending("/" + identifier)
+//        }
+        var myDownloadPath = (NSHomeDirectory() as NSString).appendingPathComponent("Documents") as String
+        myDownloadPath.append("/My Downloads")
+        if !FileManager.default.fileExists(atPath: myDownloadPath) {
+            try! FileManager.default.createDirectory(atPath: myDownloadPath, withIntermediateDirectories: true, attributes: nil)
+        }
+        return myDownloadPath
+    }()
+    
+    static let downloadingCachePath: String = {
         let cachePaths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
         if let cachePath = cachePaths.first, let identifier = Bundle.main.bundleIdentifier {
-            return cachePath.appending("/" + identifier)
+            return cachePath.appending("/" + identifier + "/" + "Downloading")
+        }
+        return ""
+    }()
+    
+    static let downloadedCachePath: String = {
+        let cachePaths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
+        if let cachePath = cachePaths.first, let identifier = Bundle.main.bundleIdentifier {
+            return cachePath.appending("/" + identifier + "/" + "Downloaded")
         }
         return ""
     }()
     
     static var defaultConfiguration: URLSessionConfiguration {
-        let conf = URLSessionConfiguration.default
+        let conf = URLSessionConfiguration.background(withIdentifier: "Bundle.main.bundleIdentifier")
         conf.urlCache = DataLoader.sharedUrlCache
         return conf
     }

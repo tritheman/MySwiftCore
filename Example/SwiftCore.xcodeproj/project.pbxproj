@@ -67,6 +67,7 @@
 		E04C76872464121F00642395 /* FileNameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C76862464121F00642395 /* FileNameGenerator.swift */; };
 		E05F243B2474072E00454326 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F243A2474072E00454326 /* DataLoader.swift */; };
 		E08635F52472EC4F005FA465 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08635F42472EC4F005FA465 /* UIImage+Extension.swift */; };
+		E0E83C77247F74DF00F1276B /* DownloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E83C76247F74DF00F1276B /* DownloadModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		E04C76862464121F00642395 /* FileNameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNameGenerator.swift; sourceTree = "<group>"; };
 		E05F243A2474072E00454326 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		E08635F42472EC4F005FA465 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		E0E83C76247F74DF00F1276B /* DownloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				E05F243A2474072E00454326 /* DataLoader.swift */,
 				E0091E9A247C22160026C3E7 /* DataLoader+Default.swift */,
 				E0091E98247C1F320026C3E7 /* DataLoaderSource.swift */,
+				E0E83C76247F74DF00F1276B /* DownloadModel.swift */,
 			);
 			path = DownloadHelper;
 			sourceTree = "<group>";
@@ -290,32 +293,32 @@
 		E04C76182463B4EF00642395 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E04C76192463B4EF00642395 /* UIDevice+Extension.swift */,
-				E04C761A2463B4EF00642395 /* NSAttributedString+Extension.swift */,
-				E04C761B2463B4EF00642395 /* UIAlertController+Extension.swift */,
-				E04C761C2463B4EF00642395 /* UIColor+Extension.swift */,
-				E04C761D2463B4EF00642395 /* UIButton+Extensions.swift */,
-				E04C761E2463B4EF00642395 /* Enum+Extension.swift */,
-				E04C761F2463B4EF00642395 /* Date+Extension.swift */,
-				E04C76202463B4EF00642395 /* UILabel+Extension.swift */,
-				E04C76212463B4EF00642395 /* UIView+Extension.swift */,
 				E04C76222463B4EF00642395 /* Bundle+Extension.swift */,
-				E04C76232463B4EF00642395 /* URL+Extension.swift */,
-				E04C76242463B4EF00642395 /* UIViewController+Extension.swift */,
-				E04C76252463B4EF00642395 /* String+Extension.swift */,
-				E04C76262463B4EF00642395 /* UIStoryBoard+Extension.swift */,
-				E04C76272463B4EF00642395 /* UIView+Constraint.swift */,
-				E04C76282463B4EF00642395 /* UIImage+Gradient.swift */,
-				E04C76292463B4EF00642395 /* Number+Extension.swift */,
-				E04C762A2463B4EF00642395 /* NSData+Hash.swift */,
-				E04C762B2463B4EF00642395 /* Dictionary+Extension.swift */,
-				E04C762C2463B4EF00642395 /* DateFormatter.swift */,
-				E04C762D2463B4EF00642395 /* UITapGestureRecognizer+Extension.swift */,
-				E04C762E2463B4EF00642395 /* UIStackView+Utility.swift */,
 				E04C762F2463B4EF00642395 /* CGRect+Extension.swift */,
-				E04C76302463B4EF00642395 /* UIView+IBInspectable.swift */,
+				E04C761F2463B4EF00642395 /* Date+Extension.swift */,
+				E04C762C2463B4EF00642395 /* DateFormatter.swift */,
+				E04C762B2463B4EF00642395 /* Dictionary+Extension.swift */,
+				E04C761E2463B4EF00642395 /* Enum+Extension.swift */,
+				E04C761A2463B4EF00642395 /* NSAttributedString+Extension.swift */,
+				E04C762A2463B4EF00642395 /* NSData+Hash.swift */,
+				E04C76292463B4EF00642395 /* Number+Extension.swift */,
 				E04C76822463B7D200642395 /* String+CommonCrypto.swift */,
+				E04C76252463B4EF00642395 /* String+Extension.swift */,
+				E04C761B2463B4EF00642395 /* UIAlertController+Extension.swift */,
+				E04C761D2463B4EF00642395 /* UIButton+Extensions.swift */,
+				E04C761C2463B4EF00642395 /* UIColor+Extension.swift */,
+				E04C76192463B4EF00642395 /* UIDevice+Extension.swift */,
 				E08635F42472EC4F005FA465 /* UIImage+Extension.swift */,
+				E04C76282463B4EF00642395 /* UIImage+Gradient.swift */,
+				E04C76202463B4EF00642395 /* UILabel+Extension.swift */,
+				E04C762E2463B4EF00642395 /* UIStackView+Utility.swift */,
+				E04C76262463B4EF00642395 /* UIStoryBoard+Extension.swift */,
+				E04C762D2463B4EF00642395 /* UITapGestureRecognizer+Extension.swift */,
+				E04C76272463B4EF00642395 /* UIView+Constraint.swift */,
+				E04C76212463B4EF00642395 /* UIView+Extension.swift */,
+				E04C76302463B4EF00642395 /* UIView+IBInspectable.swift */,
+				E04C76242463B4EF00642395 /* UIViewController+Extension.swift */,
+				E04C76232463B4EF00642395 /* URL+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				E04C76572463B4EF00642395 /* UIColor+Extension.swift in Sources */,
 				E04C76652463B4EF00642395 /* NSData+Hash.swift in Sources */,
 				E04C766B2463B4EF00642395 /* UIView+IBInspectable.swift in Sources */,
+				E0E83C77247F74DF00F1276B /* DownloadModel.swift in Sources */,
 				E04C76682463B4EF00642395 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				E04C76672463B4EF00642395 /* DateFormatter.swift in Sources */,
 				E04C767D2463B4EF00642395 /* Flashable.swift in Sources */,

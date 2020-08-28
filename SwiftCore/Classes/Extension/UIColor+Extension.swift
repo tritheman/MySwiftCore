@@ -10,17 +10,17 @@ import UIKit
 import Foundation
 
 public extension UIColor {
-    convenience public init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1) {
+    convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1) {
         self.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
     }
-    convenience public init(grayLevel: Int, alpha: CGFloat = 1) {
+    convenience init(grayLevel: Int, alpha: CGFloat = 1) {
         self.init(white: CGFloat(grayLevel) / 255.0, alpha: alpha)
     }
-    convenience public init(hex:Int, alpha: CGFloat = 1) {
+    convenience init(hex:Int, alpha: CGFloat = 1) {
         self.init(red:CGFloat((hex >> 16) & 0xff)/255.0, green:CGFloat((hex >> 8) & 0xff)/255.0, blue:CGFloat(hex & 0xff)/255.0, alpha:alpha)
     }
     
-    convenience public init(hexValue: String) {
+    convenience init(hexValue: String) {
         let hex = hexValue.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
@@ -40,6 +40,6 @@ public extension UIColor {
     
 }
 
-extension UIColor {
-    static public let blueLightColor: UIColor = UIColor(hex: 0x1BA8FF)
+public extension UIColor {
+    static let blueLightColor: UIColor = UIColor(hex: 0x1BA8FF)
 }

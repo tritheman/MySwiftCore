@@ -11,7 +11,7 @@ import UIKit
 
 public protocol Cyclable { }
 public extension  Cyclable where Self:UILabel {
-    public func cycleText(_ message : String?, firstCycle : Bool) {
+    func cycleText(_ message : String?, firstCycle : Bool) {
         func initialCycling(){
             let startFrame = self.frame.offsetBy(dx: 0, dy: 25)
             let endFrame = self.frame

@@ -13,15 +13,15 @@ import Foundation
 public extension UIDevice{
     
     // MARK: Properties
-    public var isPhoneIdiom: Bool {
+    var isPhoneIdiom: Bool {
         return (self.userInterfaceIdiom == .phone)
     }
     
-    public var iPhoneXString: String {
+    var iPhoneXString: String {
         return "iPhone X"
     }
     
-    public var isIPhoneX: Bool {
+    var isIPhoneX: Bool {
         #if os(iOS) && (arch(i386) || arch(x86_64))
         return (isPhoneIdiom && UIScreen.main.nativeBounds.height == 2436)
         #else
@@ -29,24 +29,24 @@ public extension UIDevice{
         #endif
     }
     
-    public var isPadIdiom: Bool{
+    var isPadIdiom: Bool{
         return (self.userInterfaceIdiom == .pad)
     }
     
-    public var isAppleTVIdiom: Bool{
+    var isAppleTVIdiom: Bool{
         return (self.userInterfaceIdiom == .tv)
     }
     
-    public var majorOSVersion: NSString {
+    var majorOSVersion: NSString {
         let result = self.systemVersion as NSString
         return result.substring(with: NSMakeRange(0, 1)) as NSString
     }
     
-    public var platform: String {
+    var platform: String {
         return self.model
     }
     
-    public var modelName: String {
+    var modelName: String {
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)

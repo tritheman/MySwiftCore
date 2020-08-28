@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DataLoaderSourceDelegate: class {
-    func dataTask(_ dataTask: URLSessionDataTask, didReceiveEvent event: DataTaskEvent)
+    func dataTask(_ dataTask: URLSessionTask, didReceiveEvent event: DataTaskEvent)
 }
 
 class Handler {
@@ -29,32 +29,21 @@ class DataLoaderSource: NSObject {
     weak var delegate: DataLoaderSourceDelegate?
     
     func startDownload(request: URLRequest, session: URLSession, didReceiveData: @escaping DidReceiveReponse, completion: @escaping DidCompleted) -> Cancellable {
-        let task = session.dataTask(with: request)
+        let task = session.downloadTask(with: request)
         let handler = Handler(didReceiveData: didReceiveData, completion: completion)
         session.delegateQueue.addOperation { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.handlers[task] = handler
         }
         task.resume()
-        send(task, .resumed)
+        sendToDelegate(task, .resumed(DownloadModel(task)))
         return task
     }
     
-    private func send(_ dataTask: URLSessionDataTask, _ event: DataTaskEvent) {
+    private func sendToDelegate(_ dataTask: URLSessionTask, _ event: DataTaskEvent) {
         print("--------------------------------")
-        switch event {
-        case .resumed:
-            print("tridh2 DataTaskEvent - resumed")
-        case .receivedResponse(let reponse):
-            print("tridh2 DataTaskEvent - receivedResponse: \(String(describing: reponse.url?.absoluteURL))")
-        case .receivedData(let data):
-            let tottalbyte = dataTask.countOfBytesExpectedToReceive
-            let receivedByte = dataTask.countOfBytesReceived
-            print("tridh2 DataTaskEvent - receivedData: \(receivedByte) - expected: \(tottalbyte)")
-        case .completed(let error):
-            print("tridh2 DataTaskEvent - completed: \(String(describing: error))")
-        }
-        print("tridh2 dataTask - \(String(describing: dataTask.currentRequest))")
+        print("tridh2 - taskID: \(event.downloadObject?.fileURL ?? "")")
+        print("tridh2 - receivedData: \(String(describing: event.downloadObject?.countOfByteReceived)) - expected: \(String(describing: event.downloadObject?.countOfByteExpectedReceived))")
         print("--------------------------------")
         delegate?.dataTask(dataTask, didReceiveEvent: event)
     }
@@ -63,7 +52,7 @@ class DataLoaderSource: NSObject {
 extension DataLoaderSource: URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
-        send(dataTask, .receivedResponse(response))
+        sendToDelegate(dataTask, .receivedResponse(DownloadModel(dataTask)))
         guard let curHandler = handlers[dataTask] else {
             completionHandler(.cancel)
             return
@@ -86,13 +75,13 @@ extension DataLoaderSource: URLSessionDataDelegate {
     }
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        send(dataTask, .receivedData(data))
+        sendToDelegate(dataTask, .receivedData(DownloadModel(dataTask)))
         
         guard let handler = handlers[dataTask], let response = dataTask.response else {
             return
         }
         
-        handler.didReceiveData(data, response)
+        handler.didReceiveData(data, response, DownloadModel(dataTask))
     }
 }
 
@@ -100,7 +89,7 @@ extension DataLoaderSource: URLSessionDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let dataTask = task as? URLSessionDataTask {
-            send(dataTask, .completed(error))
+            sendToDelegate(dataTask, .completed(error))
         }
         
         guard let handler = handlers[task] else {
@@ -120,26 +109,30 @@ extension DataLoaderSource: URLSessionDelegate {
     }
 }
 
-//extension DataLoaderSource: URLSessionDownloadDelegate {
-//    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-//        print("tridh2 - URLSessionDownloadDelegate - \(location.absoluteString)")
-//        if let dataTask = downloadTask as? URLSessionTask {
-//            send(dataTask, .completed(nil))
-//        }
-//
-//        guard let handler = handlers[dataTask] else {
-//            return
-//        }
-//        handlers[task] = nil
-//        handler.completion(nil)
-//
-//    }
-//
-//    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-//        print("tridh2 - URLSessionDownloadDelegate - totalBytesWritten: \(totalBytesWritten) - totalBytesExpectedToWrite: \(totalBytesExpectedToWrite)")
-//    }
-//
-//    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64) {
-//        print("tridh2 - URLSessionDownloadTask - didResumeAtOffset: \(fileOffset) - expectedTotalBytes: \(expectedTotalBytes)")
-//    }
-//}
+extension DataLoaderSource: URLSessionDownloadDelegate {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        print("tridh2 - \(location.absoluteString)")
+        sendToDelegate(downloadTask, .completed(nil))
+        guard let handler = handlers[downloadTask] else {
+            return
+        }
+        handlers[downloadTask] = nil
+        handler.completion(nil)
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        sendToDelegate(downloadTask, .receivedData(DownloadModel(downloadTask)))
+        guard let handler = handlers[downloadTask] else {
+            return
+        }
+        handler.didReceiveData(nil, nil, DownloadModel(downloadTask))
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64) {
+        sendToDelegate(downloadTask, .resumed(DownloadModel(downloadTask)))
+        guard let handler = handlers[downloadTask] else {
+            return
+        }
+        handler.didReceiveData(nil, nil, DownloadModel(downloadTask))
+    }
+}

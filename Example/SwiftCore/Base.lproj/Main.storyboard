@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -21,7 +21,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnJ-yY-vOS">
                                 <rect key="frame" x="20" y="20" width="335" height="30"/>
-                                <state key="normal" title="https://www.dropbox.com/s/6xlpner3s6q336f/file1.mp4?dl=1"/>
+                                <state key="normal" title="http://ipv4.download.thinkbroadband.com/1GB.zip"/>
                                 <connections>
                                     <action selector="downloadPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jbh-Vd-iM5"/>
                                 </connections>
@@ -32,6 +32,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-E5-DRa">
+                                <rect key="frame" x="157" y="70" width="61" height="30"/>
+                                <state key="normal" title="Suspend"/>
+                                <connections>
+                                    <action selector="suspendDidClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HkS-sl-HqF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5p-P2-O9f">
+                                <rect key="frame" x="150" y="120" width="75" height="30"/>
+                                <state key="normal" title="Resume all"/>
+                                <connections>
+                                    <action selector="resumeAllPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3eM-cU-AVo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -39,10 +53,14 @@
                             <constraint firstItem="NnJ-yY-vOS" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="CNE-Z7-I5b"/>
                             <constraint firstItem="NnJ-yY-vOS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="Dik-Rz-2oX"/>
                             <constraint firstItem="XRk-fy-icO" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="VxU-wT-hEo"/>
+                            <constraint firstItem="SzA-E5-DRa" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Zps-C6-u6j"/>
+                            <constraint firstItem="x5p-P2-O9f" firstAttribute="top" secondItem="SzA-E5-DRa" secondAttribute="bottom" constant="20" id="ab9-1o-X3O"/>
                             <constraint firstAttribute="trailing" secondItem="XRk-fy-icO" secondAttribute="trailing" constant="20" id="e6D-fh-tn5"/>
                             <constraint firstItem="XRk-fy-icO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="i09-Ku-Ho1"/>
                             <constraint firstItem="NnJ-yY-vOS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="pGb-aO-beP"/>
                             <constraint firstAttribute="trailing" secondItem="NnJ-yY-vOS" secondAttribute="trailing" constant="20" id="rdc-ll-qgm"/>
+                            <constraint firstItem="x5p-P2-O9f" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="tix-wW-yyw"/>
+                            <constraint firstItem="SzA-E5-DRa" firstAttribute="top" secondItem="NnJ-yY-vOS" secondAttribute="bottom" constant="20" id="yo7-fA-0Ii"/>
                         </constraints>
                     </view>
                     <connections>

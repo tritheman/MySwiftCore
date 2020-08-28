@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
+    var curTask :Cancellable?
     let dataLoader = DataLoader()
-    var downloadItems: [String] = ["https://www.dropbox.com/s/6xlpner3s6q336f/file1.mp4?dl=1",
+    var downloadItems: [String] = ["http://ipv4.download.thinkbroadband.com/1GB.zip",
                                    "https://www.dropbox.com/s/73ymbx6icoiqus9/file2.mp4?dl=1",
                                    "https://www.dropbox.com/s/4pw4jwiju0eon6r/file3.mp4?dl=1",
                                    "https://www.dropbox.com/s/2bmbk8id7nseirq/file4.mp4?dl=1",
@@ -31,18 +32,29 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func resumeAllPressed(_ sender: Any) {
+        dataLoader.populateOtherDownloadTasks()
+    }
+    
     @IBAction func downloadPressed(_ sender: Any) {
         guard let titleString = downloadButton.title(for: .normal), let url = URL(string: titleString) else { return }
         let urlRequest = URLRequest(url: url)
-        let curTask = dataLoader.loadData(request: urlRequest, didReceiveData: { [weak self] (curData, urlReponse) in
+        guard curTask == nil else {
+            curTask?.resume()
+            return }
+        curTask = dataLoader.loadData(request: urlRequest, didReceiveData: { [weak self] (curData, urlReponse, downloadModel) in
             guard let strongSelf = self else { return }
-//            print("tridh 2 curDownloadData \(curData.count)")
         }) { [weak self] (error) in
             guard let strongSelf = self else { return }
-//            print("tridh 2 downloadPressed \(error)")
+            strongSelf.dataLoader.session.getAllTasks { (tasks) in
+            }
         }
-        
     }
+    
+    @IBAction func suspendDidClicked(_ sender: Any) {
+        curTask?.suspend()
+    }
+    
     
     func testCache() {
         let testDataCached = try! DataCache(name: "Tridh2")

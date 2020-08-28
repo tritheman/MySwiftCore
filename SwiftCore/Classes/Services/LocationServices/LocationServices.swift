@@ -265,8 +265,6 @@ public class LocationServices : NSObject {
     }
 }
 
-
-
 extension LocationServices: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = manager.location else {

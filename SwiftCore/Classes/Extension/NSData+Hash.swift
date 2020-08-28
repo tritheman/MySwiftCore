@@ -36,7 +36,6 @@ public class SHA256HashUtil {
 
 
 extension NSData {
-    
     public func sha256hash() -> String {
         let util = SHA256HashUtil()
         return util.getSHA256(input: self)
