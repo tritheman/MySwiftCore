@@ -12,10 +12,10 @@ import UIKit
 public extension UIImage {
 
     var pngRepresentationData: Data? {
-        return UIImagePNGRepresentation(self)
+        return self.pngData()
     }
 
     var jpegRepresentationData: Data? {
-        return UIImageJPEGRepresentation(self, 1.0)
+        return self.jpegData(compressionQuality: 1.0)
     }
 }

@@ -11,9 +11,9 @@ import UIKit
 
 public extension UIViewController {
     func add(_ child: UIViewController) {
-        addChildViewController(child)
+        addChild(child)
         view.addSubview(child.view)
-        child.didMove(toParentViewController: self)
+        child.didMove(toParent: self)
     }
     
     func remove() {
@@ -23,8 +23,8 @@ public extension UIViewController {
             return
         }
         
-        willMove(toParentViewController: nil)
+        willMove(toParent: nil)
         view.removeFromSuperview()
-        removeFromParentViewController()
+        removeFromParent()
     }
 }

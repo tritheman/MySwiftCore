@@ -41,10 +41,6 @@ class DataLoaderSource: NSObject {
     }
     
     private func sendToDelegate(_ dataTask: URLSessionTask, _ event: DataTaskEvent) {
-        print("--------------------------------")
-        print("tridh2 - taskID: \(event.downloadObject?.fileURL ?? "")")
-        print("tridh2 - receivedData: \(String(describing: event.downloadObject?.countOfByteReceived)) - expected: \(String(describing: event.downloadObject?.countOfByteExpectedReceived))")
-        print("--------------------------------")
         delegate?.dataTask(dataTask, didReceiveEvent: event)
     }
 }
@@ -111,7 +107,6 @@ extension DataLoaderSource: URLSessionDelegate {
 
 extension DataLoaderSource: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("tridh2 - \(location.absoluteString)")
         sendToDelegate(downloadTask, .completed(nil))
         guard let handler = handlers[downloadTask] else {
             return

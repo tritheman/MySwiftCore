@@ -26,10 +26,9 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'tritheman' => 'tri.dang2@tiki.vn' }
   s.source           = { :git => 'https://github.com/tritheman/SwiftCore.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.platform     = :ios, "9.0"
   s.static_framework = true
-
+  s.swift_version = '5.0'
   s.resources = 'SwiftCore/**/*.{xib,plist,bundle,xcassets,storyboard,png,jpeg,pdf}'
   s.exclude_files = "SwiftCore.podspec", "SwiftCore/Info.plist"
   s.xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }

@@ -27,12 +27,12 @@ public extension Movable where Self : UIView {
         let endTransform = CATransform3DTranslate(layer.transform, endOffset.x, endOffset.y, 0.0)
         
         let animation = CABasicAnimation(keyPath: "transform")
-        animation.fillMode  = kCAFillModeBackwards
+        animation.fillMode  = CAMediaTimingFillMode.backwards
         animation.beginTime = CACurrentMediaTime() + delay
         animation.duration  = duration
         animation.fromValue = NSValue(caTransform3D: startTransform)
         animation.toValue   = NSValue(caTransform3D: endTransform)
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         
         self.layer.transform = endTransform
         

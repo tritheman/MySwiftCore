@@ -58,7 +58,7 @@ public extension String {
                     paragraphStyle.alignment = .left
                 }
                 
-                attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+                attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
                 return attributedString
             }
             
@@ -97,12 +97,12 @@ public extension String {
     }
     
     func toBold() -> NSMutableAttributedString {
-        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)]
+        let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)]
         let boldString = NSMutableAttributedString(string:"\(self)", attributes:attrs)
         return boldString
     }
     func toBold(color: UIColor, size: CGFloat) -> NSMutableAttributedString {
-        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium), NSAttributedStringKey.foregroundColor: color]
+        let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium), NSAttributedString.Key.foregroundColor: color]
         return NSMutableAttributedString(string:"\(self)", attributes:attrs)
     }
     
@@ -216,7 +216,7 @@ public extension String {
         attributedString = NSMutableAttributedString(string: labelText)
         
         // Line spacing attribute
-        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
         
         return attributedString
     }

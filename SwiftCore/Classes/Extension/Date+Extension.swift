@@ -693,7 +693,7 @@ extension Date {
     
     public static let weekDayTimeFormatter: DateFormatter = {
         var dateFormatter = DateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale!
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale?
         dateFormatter.amSymbol = "a"
         dateFormatter.pmSymbol = "p"
         dateFormatter.dateFormat = "EEEE, h:mma"
@@ -702,7 +702,7 @@ extension Date {
     
     public static let monthDateYearFormatter: DateFormatter = {
         var dateFormatter = DateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale!
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale?
         dateFormatter.dateFormat = "MMM dd, yyyy"
         return dateFormatter
     }()
