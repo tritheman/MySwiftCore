@@ -41,5 +41,47 @@ public extension UIColor {
 }
 
 public extension UIColor {
+    static let Cerulean = UIColor(r: 0, g: 159, b: 219)
+    static let Cyan = UIColor(r: 35, g: 209, b: 207)
+    
+    static let MacaroniAndCheese = UIColor(r: 246, g: 178, b: 64)
+    
+    static let Seaweed: UIColor = UIColor(r: 24, g: 190, b: 135)
+    
+    static let playerBackgroundImageTintBlue: UIColor = UIColor(red: 0.2, green: 0.65, blue: 0.9, alpha: 1.0)
+    
+    static let popupLinkTextBlue: UIColor = UIColor(r: 0, g: 178, b:  237)
+    
+    static let activeCastingTextColor: UIColor = UIColor(r: 19, g: 102, b: 255)
+    
+    static let White20: UIColor = UIColor(r: 250, g: 250, b: 250)
+    
+    static let White: UIColor = UIColor(r: 235, g: 235, b: 235)
+    
+    static let LightGray: UIColor = UIColor(r: 218, g: 218, b: 218)
+    
+    static let Gray190: UIColor = UIColor(r: 190, g: 190, b: 190)
+    
+    static let Gray192: UIColor = UIColor(r: 192, g: 192, b: 192)
+    
+    static let Gray155: UIColor = UIColor(r: 155, g: 155, b: 155)
+    
+    static let Gray74: UIColor = UIColor(r: 74, g: 74, b: 74)
+    
+    static let Gray40: UIColor = UIColor(r: 40, g: 40, b: 40)
+    
+    static let Gray34: UIColor = UIColor(r: 34, g: 34, b: 34, a: 0.6)
+    
+    static let Black34: UIColor = UIColor(r: 34, g: 34, b: 34)
+    
+    static let Black31: UIColor = UIColor(r: 31, g: 31, b:  31)
+    
+    static let WarmGray: UIColor = UIColor(r: 128, g: 128, b: 128)
+    
+    static let FilterIndicator: UIColor = UIColor(r: 0, g: 178, b:  237)
+    
+    static let FocusedColor: UIColor = UIColor(r: 0, g: 159, b:  219)
+    
+    static let TooltipBackgroundColor: UIColor = UIColor(r: 36, g: 133, b: 188)
     static let blueLightColor: UIColor = UIColor(hex: 0x1BA8FF)
 }
