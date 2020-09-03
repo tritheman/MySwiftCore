@@ -66,6 +66,22 @@
 		E04C76852463B8E000642395 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C76842463B8E000642395 /* DataCache.swift */; };
 		E04C76872464121F00642395 /* FileNameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C76862464121F00642395 /* FileNameGenerator.swift */; };
 		E05F243B2474072E00454326 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F243A2474072E00454326 /* DataLoader.swift */; };
+		E076EC10250115EC00E92F19 /* CurrentTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC05250115EB00E92F19 /* CurrentTimeLabel.swift */; };
+		E076EC11250115EC00E92F19 /* SliderWithBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC07250115EB00E92F19 /* SliderWithBuffer.swift */; };
+		E076EC12250115EC00E92F19 /* ScrubberTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC08250115EB00E92F19 /* ScrubberTrackView.swift */; };
+		E076EC13250115EC00E92F19 /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC09250115EB00E92F19 /* CustomProgressBar.swift */; };
+		E076EC14250115EC00E92F19 /* Scrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC0A250115EB00E92F19 /* Scrubber.swift */; };
+		E076EC15250115EC00E92F19 /* ControlLayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E076EC0B250115EB00E92F19 /* ControlLayerView.xib */; };
+		E076EC16250115EC00E92F19 /* SystemVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC0D250115EB00E92F19 /* SystemVolumeView.swift */; };
+		E076EC17250115EC00E92F19 /* ControlLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC0E250115EB00E92F19 /* ControlLayerView.swift */; };
+		E076EC202501165500E92F19 /* StreamError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC192501165500E92F19 /* StreamError.swift */; };
+		E076EC212501165500E92F19 /* StreamSourceTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC1A2501165500E92F19 /* StreamSourceTrack.swift */; };
+		E076EC222501165500E92F19 /* StreamSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC1B2501165500E92F19 /* StreamSourceDelegate.swift */; };
+		E076EC232501165500E92F19 /* PlayBackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC1C2501165500E92F19 /* PlayBackState.swift */; };
+		E076EC242501165500E92F19 /* StreamSourceProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC1D2501165500E92F19 /* StreamSourceProtocol+Default.swift */; };
+		E076EC252501165500E92F19 /* StreamSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC1E2501165500E92F19 /* StreamSourceProtocol.swift */; };
+		E076EC262501165500E92F19 /* StreamAdPositionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC1F2501165500E92F19 /* StreamAdPositionType.swift */; };
+		E076EC282501166100E92F19 /* AVplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076EC272501166100E92F19 /* AVplayerView.swift */; };
 		E08635F52472EC4F005FA465 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08635F42472EC4F005FA465 /* UIImage+Extension.swift */; };
 		E0E83C77247F74DF00F1276B /* DownloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E83C76247F74DF00F1276B /* DownloadModel.swift */; };
 /* End PBXBuildFile section */
@@ -151,6 +167,22 @@
 		E04C76842463B8E000642395 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		E04C76862464121F00642395 /* FileNameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNameGenerator.swift; sourceTree = "<group>"; };
 		E05F243A2474072E00454326 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		E076EC05250115EB00E92F19 /* CurrentTimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTimeLabel.swift; sourceTree = "<group>"; };
+		E076EC07250115EB00E92F19 /* SliderWithBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderWithBuffer.swift; sourceTree = "<group>"; };
+		E076EC08250115EB00E92F19 /* ScrubberTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrubberTrackView.swift; sourceTree = "<group>"; };
+		E076EC09250115EB00E92F19 /* CustomProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
+		E076EC0A250115EB00E92F19 /* Scrubber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrubber.swift; sourceTree = "<group>"; };
+		E076EC0B250115EB00E92F19 /* ControlLayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlLayerView.xib; sourceTree = "<group>"; };
+		E076EC0D250115EB00E92F19 /* SystemVolumeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemVolumeView.swift; sourceTree = "<group>"; };
+		E076EC0E250115EB00E92F19 /* ControlLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLayerView.swift; sourceTree = "<group>"; };
+		E076EC192501165500E92F19 /* StreamError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamError.swift; sourceTree = "<group>"; };
+		E076EC1A2501165500E92F19 /* StreamSourceTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSourceTrack.swift; sourceTree = "<group>"; };
+		E076EC1B2501165500E92F19 /* StreamSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSourceDelegate.swift; sourceTree = "<group>"; };
+		E076EC1C2501165500E92F19 /* PlayBackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayBackState.swift; sourceTree = "<group>"; };
+		E076EC1D2501165500E92F19 /* StreamSourceProtocol+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StreamSourceProtocol+Default.swift"; sourceTree = "<group>"; };
+		E076EC1E2501165500E92F19 /* StreamSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSourceProtocol.swift; sourceTree = "<group>"; };
+		E076EC1F2501165500E92F19 /* StreamAdPositionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamAdPositionType.swift; sourceTree = "<group>"; };
+		E076EC272501166100E92F19 /* AVplayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVplayerView.swift; sourceTree = "<group>"; };
 		E08635F42472EC4F005FA465 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E0E83C76247F74DF00F1276B /* DownloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +368,7 @@
 		E04C76372463B4EF00642395 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E076EC022501158F00E92F19 /* Streaming */,
 				E04C76382463B4EF00642395 /* LocationServices */,
 				E04C763A2463B4EF00642395 /* Operation */,
 				E04C763C2463B4EF00642395 /* NetworkManager */,
@@ -431,6 +464,61 @@
 			path = Caching;
 			sourceTree = "<group>";
 		};
+		E076EC022501158F00E92F19 /* Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				E076EC182501164300E92F19 /* StreamingProtocol */,
+				E076EC03250115AC00E92F19 /* Common */,
+			);
+			path = Streaming;
+			sourceTree = "<group>";
+		};
+		E076EC03250115AC00E92F19 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E076EC0E250115EB00E92F19 /* ControlLayerView.swift */,
+				E076EC0B250115EB00E92F19 /* ControlLayerView.xib */,
+				E076EC05250115EB00E92F19 /* CurrentTimeLabel.swift */,
+				E076EC06250115EB00E92F19 /* SliderProgress */,
+				E076EC0C250115EB00E92F19 /* VolumnView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E076EC06250115EB00E92F19 /* SliderProgress */ = {
+			isa = PBXGroup;
+			children = (
+				E076EC07250115EB00E92F19 /* SliderWithBuffer.swift */,
+				E076EC08250115EB00E92F19 /* ScrubberTrackView.swift */,
+				E076EC09250115EB00E92F19 /* CustomProgressBar.swift */,
+				E076EC0A250115EB00E92F19 /* Scrubber.swift */,
+			);
+			path = SliderProgress;
+			sourceTree = "<group>";
+		};
+		E076EC0C250115EB00E92F19 /* VolumnView */ = {
+			isa = PBXGroup;
+			children = (
+				E076EC0D250115EB00E92F19 /* SystemVolumeView.swift */,
+			);
+			path = VolumnView;
+			sourceTree = "<group>";
+		};
+		E076EC182501164300E92F19 /* StreamingProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				E076EC272501166100E92F19 /* AVplayerView.swift */,
+				E076EC1E2501165500E92F19 /* StreamSourceProtocol.swift */,
+				E076EC1D2501165500E92F19 /* StreamSourceProtocol+Default.swift */,
+				E076EC1B2501165500E92F19 /* StreamSourceDelegate.swift */,
+				E076EC1A2501165500E92F19 /* StreamSourceTrack.swift */,
+				E076EC192501165500E92F19 /* StreamError.swift */,
+				E076EC1F2501165500E92F19 /* StreamAdPositionType.swift */,
+				E076EC1C2501165500E92F19 /* PlayBackState.swift */,
+			);
+			path = StreamingProtocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -519,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				E076EC15250115EC00E92F19 /* ControlLayerView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				E04C766C2463B4EF00642395 /* .gitkeep in Resources */,
@@ -613,6 +702,7 @@
 				E04C76832463B7D200642395 /* String+CommonCrypto.swift in Sources */,
 				E04C76752463B4EF00642395 /* Platform.swift in Sources */,
 				E04C766D2463B4EF00642395 /* PostalCode.swift in Sources */,
+				E076EC10250115EC00E92F19 /* CurrentTimeLabel.swift in Sources */,
 				E04C765C2463B4EF00642395 /* UIView+Extension.swift in Sources */,
 				E04C76812463B4EF00642395 /* Cyclable.swift in Sources */,
 				E04C767F2463B4EF00642395 /* UIScrollView+ParallaxHeader.swift in Sources */,
@@ -626,28 +716,39 @@
 				E04C76792463B4EF00642395 /* Dimmable.swift in Sources */,
 				E04C767B2463B4EF00642395 /* MovableAndDimmable.swift in Sources */,
 				E04C76582463B4EF00642395 /* UIButton+Extensions.swift in Sources */,
+				E076EC14250115EC00E92F19 /* Scrubber.swift in Sources */,
 				E04C765B2463B4EF00642395 /* UILabel+Extension.swift in Sources */,
 				E08635F52472EC4F005FA465 /* UIImage+Extension.swift in Sources */,
 				E04C765F2463B4EF00642395 /* UIViewController+Extension.swift in Sources */,
 				E04C76562463B4EF00642395 /* UIAlertController+Extension.swift in Sources */,
 				E04C76612463B4EF00642395 /* UIStoryBoard+Extension.swift in Sources */,
 				E0091E9B247C22160026C3E7 /* DataLoader+Default.swift in Sources */,
+				E076EC17250115EC00E92F19 /* ControlLayerView.swift in Sources */,
 				E04C76662463B4EF00642395 /* Dictionary+Extension.swift in Sources */,
+				E076EC212501165500E92F19 /* StreamSourceTrack.swift in Sources */,
 				E04C76762463B4EF00642395 /* Reachability.swift in Sources */,
 				E04C767E2463B4EF00642395 /* ParallaxHeaderMode.swift in Sources */,
+				E076EC202501165500E92F19 /* StreamError.swift in Sources */,
 				E05F243B2474072E00454326 /* DataLoader.swift in Sources */,
+				E076EC252501165500E92F19 /* StreamSourceProtocol.swift in Sources */,
 				E04C76622463B4EF00642395 /* UIView+Constraint.swift in Sources */,
 				E04C76742463B4EF00642395 /* NetworkType.swift in Sources */,
+				E076EC12250115EC00E92F19 /* ScrubberTrackView.swift in Sources */,
+				E076EC11250115EC00E92F19 /* SliderWithBuffer.swift in Sources */,
 				E0091E99247C1F320026C3E7 /* DataLoaderSource.swift in Sources */,
+				E076EC232501165500E92F19 /* PlayBackState.swift in Sources */,
 				E04C76552463B4EF00642395 /* NSAttributedString+Extension.swift in Sources */,
 				E04C76802463B4EF00642395 /* ParallaxHeader.swift in Sources */,
+				E076EC282501166100E92F19 /* AVplayerView.swift in Sources */,
 				E04C76732463B4EF00642395 /* NetworkManager.swift in Sources */,
+				E076EC262501165500E92F19 /* StreamAdPositionType.swift in Sources */,
 				E04C76592463B4EF00642395 /* Enum+Extension.swift in Sources */,
 				E04C766F2463B4EF00642395 /* Regex.swift in Sources */,
 				E04C767C2463B4EF00642395 /* ParalaxEffect.swift in Sources */,
 				E04C765D2463B4EF00642395 /* Bundle+Extension.swift in Sources */,
 				E04C766A2463B4EF00642395 /* CGRect+Extension.swift in Sources */,
 				E04C765E2463B4EF00642395 /* URL+Extension.swift in Sources */,
+				E076EC222501165500E92F19 /* StreamSourceDelegate.swift in Sources */,
 				E04C76572463B4EF00642395 /* UIColor+Extension.swift in Sources */,
 				E04C76652463B4EF00642395 /* NSData+Hash.swift in Sources */,
 				E04C766B2463B4EF00642395 /* UIView+IBInspectable.swift in Sources */,
@@ -655,12 +756,15 @@
 				E04C76682463B4EF00642395 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				E04C76672463B4EF00642395 /* DateFormatter.swift in Sources */,
 				E04C767D2463B4EF00642395 /* Flashable.swift in Sources */,
+				E076EC242501165500E92F19 /* StreamSourceProtocol+Default.swift in Sources */,
+				E076EC13250115EC00E92F19 /* CustomProgressBar.swift in Sources */,
 				E04C76702463B4EF00642395 /* ReplaceMe.swift in Sources */,
 				E04C76722463B4EF00642395 /* BaseOperation.swift in Sources */,
 				E04C76542463B4EF00642395 /* UIDevice+Extension.swift in Sources */,
 				E04C76852463B8E000642395 /* DataCache.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E04C76642463B4EF00642395 /* Number+Extension.swift in Sources */,
+				E076EC16250115EC00E92F19 /* SystemVolumeView.swift in Sources */,
 				E04C76602463B4EF00642395 /* String+Extension.swift in Sources */,
 				E04C76772463B4EF00642395 /* AnimationQueue.swift in Sources */,
 				E04C765A2463B4EF00642395 /* Date+Extension.swift in Sources */,

@@ -7,9 +7,15 @@
 import UIKit
 
 public struct AlertHelper {
-    var title:String
-    var message:String
-    var titleForOkButton:String
+    public var title:String
+    public var message:String
+    public var titleForOkButton:String
+    
+    public init(_ alertTitle: String, _ alertMessage: String, _ buttonTitle: String) {
+        self.title = alertTitle
+        self.message = alertMessage
+        self.titleForOkButton = buttonTitle
+    }
 }
 
 public extension UIAlertController {
