@@ -22,7 +22,7 @@ pod 'SwiftCore'
 
 ## Author
 
-tritheman, tri.dang2@tiki.vn
+tritheman, tri.dang2@tiki.vn, tridh60035@gmail.com
 
 ## License
 
